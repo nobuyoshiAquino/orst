@@ -9,8 +9,16 @@ impl Sorter for InsertionSort {
     where
         T: Ord,
     {
+        // [sorted | not sorted]
         for unsorted in 1..slice.len() {
+            // slice[unsorted..] is not sorted
             if !self.smart {
+                // take slice[unsorted] and place in sorted location
+                // in slice[..=unsorted]
+                // [ 1 3 4 | 2]
+                // [ 1 3 4 2 | ]
+                // [ 1 3 2 4 | ]
+                // [ 1 2 3 4 | ]
                 let mut i = unsorted;
                 while i > 0 && slice[i - 1] > slice[i] {
                     slice.swap(i - 1, i);
