@@ -9,6 +9,11 @@ mod insertionsort;
 mod selectionsort;
 mod quicksort;
 
+pub use bubblesort::BubbleSort;
+pub use insertionsort::InsertionSort;
+pub use quicksort::QuickSort;
+pub use selectionsort::SelectionSort;
+
 #[cfg(test)]
 mod tests {
     use super::*;
